@@ -10,7 +10,7 @@ function Calendar() {
     const [events, setEvents] = useState([]);
 
     const fetchEvents = () => {
-        fetch(`http://customerrest.herokuapp.com/gettrainings`)
+        fetch(`https://customerrest.herokuapp.com/gettrainings`)
             .then(response => response.json())
             .then(data => {
                 const gottenEvents = data.map((anEvent) => {

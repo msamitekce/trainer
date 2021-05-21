@@ -19,7 +19,7 @@ function CustomerList() {
   const [customers, setCustomers] = useState([]);
 
   const fetchCustomers = () => {
-    fetch("http://customerrest.herokuapp.com/api/customers")
+    fetch("https://customerrest.herokuapp.com/api/customers")
       .then(response => response.json())
       .then(data => setCustomers(data.content))
       .catch(error => console.log(error));
@@ -31,7 +31,7 @@ function CustomerList() {
   };
 
   const addCustomer = (newCustomer) => {
-    fetch("http://customerrest.herokuapp.com/api/customers", {
+    fetch("https://customerrest.herokuapp.com/api/customers", {
       method: "POST",
       body: JSON.stringify(newCustomer),
       headers: { "Content-type": "application/json" },
@@ -48,7 +48,7 @@ function CustomerList() {
   };
 
   const addTraining = (newTraining) => {
-    fetch("http://customerrest.herokuapp.com/api/trainings", {
+    fetch("https://customerrest.herokuapp.com/api/trainings", {
       method: "POST",
       body: JSON.stringify(newTraining),
       headers: { "Content-type": "application/json" },

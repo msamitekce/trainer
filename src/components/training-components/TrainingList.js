@@ -21,7 +21,7 @@ function TrainingsList() {
   const [trainings, setTrainings] = useState([]);
 
   const fetchTrainings = () => {
-    fetch("http://customerrest.herokuapp.com/gettrainings")
+    fetch("https://customerrest.herokuapp.com/gettrainings")
       .then(response => response.json())
       .then(data => setTrainings(data)).catch((error) => console.log(error));
   };
@@ -30,7 +30,7 @@ function TrainingsList() {
 
   const deleteTraining = id => {
     if (window.confirm("Delete training?")) {
-      const url = "http://customerrest.herokuapp.com/api/trainings/" + id;
+      const url = "https://customerrest.herokuapp.com/api/trainings/" + id;
       fetch(url, { method: "DELETE" })
         .then(response =>
           response.ok ? fetchTrainings() : alert("Error"))
