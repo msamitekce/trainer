@@ -4,9 +4,10 @@ import { Tabs, Tab, AppBar } from "@material-ui/core";
 import { Route, BrowserRouter, Switch, Link } from "react-router-dom";
 import Trainings from "./components/menu-components/Trainings";
 import Customers from "./components/menu-components/Customers";
+import Calendar from "./components/menu-components/Calendar";
 
 export default function App() {
-  const routes = ["/trainings", "/customers"];
+  const routes = ["/trainings", "/customers", "/calendar"];
   return (
     <div className="App">
       <BrowserRouter>
@@ -34,6 +35,12 @@ export default function App() {
                   component={Link}
                   to={routes[1]}
                 />
+                 <Tab
+                  value={routes[2]}
+                  label="Calendar"
+                  component={Link}
+                  to={routes[2]}
+                />
               </Tabs>
             </AppBar>
           )}
@@ -42,6 +49,7 @@ export default function App() {
         <Switch>
           <Route path="/trainings" component={Trainings} />
           <Route path="/customers" component={Customers} />
+          <Route path="/calendar" component={Calendar} />
         </Switch>
       </BrowserRouter>
     </div>
